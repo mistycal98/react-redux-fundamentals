@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+// Provider from react-redux package
+import { Provider } from "react-redux";
+
+// Import the store
+import store from "./redux/store/store";
+
+// Styles import
+import "./App.css";
+
+// import Components
+import Counter from "./components/counter";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<Provider store={store}>
+			<div className="App">
+				<Counter />
+			</div>
+		</Provider>
+	);
 }
 
 export default App;
